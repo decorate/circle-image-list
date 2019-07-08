@@ -17,6 +17,8 @@
 <script>
     import  ImageUploadable from '../models/Parents/ImageUploadable'
     import linq from 'linq'
+    import '../sass/style.scss'
+    import '../../dist/circle-image-list.css'
 
     export default {
         name: 'circle-image-list',
@@ -100,4 +102,7 @@
         }
     }
 </script>
+
+<style lang="scss">
+</style>
 
