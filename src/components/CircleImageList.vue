@@ -101,6 +101,3 @@
     }
 </script>
 
-<style lang="scss" scoped>
-@import "../sass/style";
-</style>
