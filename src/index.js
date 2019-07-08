@@ -1,8 +1,8 @@
 import '@babel/polyfill'
 
-import EX from './components/Example'
+import CircleImageList from './components/CircleImageList'
 
 export {
-    EX,
-    EX as default
+    CircleImageList,
+    CircleImageList as default
 }

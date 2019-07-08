@@ -1,22 +1,22 @@
 {
-  "name": "@team-decorate/example",
+  "name": "@team-decorate/circle-image-list",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/example.common.js",
-  "unpkg": "dist/example.umd.js",
+  "main": "dist/circle-image-list.common.js",
+  "unpkg": "dist/circle-image-list.umd.js",
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build src/index.js --target lib --name example",
+    "build": "vue-cli-service build src/index.js --target lib --name circle-image-list",
     "test": "vue-cli-service test:unit tests/",
     "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decorate/vue-searchable.git"
+    "url": "git+https://github.com/decorate/circle-image-list.git"
   },
   "keywords": [
     "example"
@@ -47,5 +47,13 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.25",
+    "encoding-japanese": "^1.0.29",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "vform": "^1.0.1"
   }
 }

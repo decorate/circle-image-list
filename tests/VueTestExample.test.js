@@ -1,5 +1,5 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
-import Searchable from '../src/components/Example.vue'
+import Searchable from '../src/components/CircleImageList.vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 jest.mock('axios')

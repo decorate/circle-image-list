@@ -1,15 +1,29 @@
 <template>
   <div id="app">
-      <example></example>
+      <circle-image-list
+          :images="list"
+          :interval="interval"
+          active-color="blue"
+          :size="size"
+      ></circle-image-list>
   </div>
 </template>
 
 <script>
-    import Example from './components/Example'
+    import CircleImageList from './components/CircleImageList'
+    import  ImageUploadable from './models/Parents/ImageUploadable'
+    import 'bootstrap/dist/css/bootstrap.css'
 
     export default {
+        data() {
+            return {
+                list: [new ImageUploadable(), new ImageUploadable(), {path: '/image/usericon2.jpg'}],
+                interval: 10,
+                size: '50'
+            }
+        },
         components: {
-            Example
+            CircleImageList
         }
     }
 
