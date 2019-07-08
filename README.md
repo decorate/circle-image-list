@@ -5,24 +5,38 @@
 
 With npm:
 
-    git clone git@github.com:decorate/npm-package-base.git
+    npm i @team-decorate/circle-image-list
     
-### Replace
+### Command Examples
 
-package.json:
+Please inherit class ImageUploadable
 
-    name,main,unpkg,repository,author,keywords
-    peerDependencies = externalLibrary
-    
-### Usage
+```html
+<circle-image-list
+          :images="list"
+          :interval="interval"
+          active-color="red"
+          :size="size"
+      ></circle-image-list>
+      
+      
+<script>
+    import CircleImageList from './components/CircleImageList'
+    import  ImageUploadable from './models/Parents/ImageUploadable'
 
-    npm install
-    npm run serve
-    
-### Build
-    
-    npm run build
+    export default {
+        data() {
+            return {
+                list: [new ImageUploadable(), {path: '/image/usericon2.jpg'}],
+                interval: 10,
+                size: '50'
+            }
+        },
+        components: {
+            CircleImageList
+        }
+    }
 
-### Test
+</script>
 
-    npm run test
+``` 
