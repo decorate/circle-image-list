@@ -1,6 +1,6 @@
 {
   "name": "@team-decorate/circle-image-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/circle-image-list.common.js",
   "unpkg": "dist/circle-image-list.umd.js",
@@ -19,7 +19,8 @@
     "url": "git+https://github.com/decorate/circle-image-list.git"
   },
   "keywords": [
-    "vue", "list"
+    "vue",
+    "list"
   ],
   "author": "",
   "license": "MIT",
