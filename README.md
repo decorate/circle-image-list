@@ -40,3 +40,31 @@ Please inherit class ImageUploadable
 </script>
 
 ``` 
+
+### props
+
+|name|default|type|required|description|
+|:---|:---|:---|:---|:---|
+|images|null|Array|true|表示する画像の配列|
+|interval|15|Number|---|表示する画像の間隔|
+|active-color|red|String|---||
+|size|'60'|String|---|画像の大きさ|
+
+### Get active image
+
+```html
+<circle-image-list
+        @clickImage="activeImage"
+        :images="user.images"
+></circle-image-list>
+
+
+methods: {
+    activeImage(index, image){
+        console.log(index)
+        console.log(image)
+    }
+}
+```
+
+
