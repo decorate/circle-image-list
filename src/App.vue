@@ -1,6 +1,7 @@
 <template>
   <div id="app">
       <circle-image-list
+          @clickImage="activeIndex"
           :images="list"
           :interval="interval"
           active-color="blue"
@@ -19,7 +20,14 @@
             return {
                 list: [new ImageUploadable()],
                 interval: 10,
-                size: '50'
+                size: '50',
+                activeImg: null
+            }
+        },
+        methods: {
+            activeIndex(index, image) {
+                console.log(index)
+                console.log(image)
             }
         },
         components: {

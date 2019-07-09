@@ -3,9 +3,9 @@
         <div class="inner scroll">
             <ul class="image-list">
                 <li class="image-list__item"
-                    @click="changeActive(i)"
-                    v-for="(image, i) in convertData"
-                    :class="[{'active': i === select}]">
+                    @click="changeActive(image, i)"
+                    v-for="(image, i) in images"
+                    :class="[{'active': image.active}]">
 
                     <img :src="image.path"/>
                 </li>
@@ -17,15 +17,12 @@
 <script>
     import  ImageUploadable from '../models/Parents/ImageUploadable'
     import linq from 'linq'
-    import '@/sass/style.scss'
 
     export default {
         name: 'circle-image-list',
 
         data() {
             return {
-                convertData: [],
-                select: 0
             }
         },
 
@@ -43,7 +40,8 @@
                 default: 15
             },
             activeColor: {
-                type: String
+                type: String,
+                required:false
             }
         },
 
@@ -73,7 +71,7 @@
 
         methods: {
             convert() {
-                this.convertData = linq.from(this.images).select(x => {
+                linq.from(this.images).select(x => {
                     if(x instanceof ImageUploadable){
                         return x
                     }
@@ -82,21 +80,30 @@
                     return i
                 })
                     .select((x,i) => {
-                        if(!i) {
+                        if(i === 0) {
                             x.active = true
                         } else {
                             x.active = false
                         }
                         return x
                     })
+                    .select((x, i) => this.images[i] = x)
                     .toArray()
+
             },
 
-            changeActive(index) {
-                linq.from(this.convertData).forEach((x,i) => {
-                    x.active = (i === index)? true : false
-                })
-                this.select = index
+            changeActive(image, index) {
+                linq.from(this.images)
+                    .select((x, i) => {
+                        x.active = false
+                        return {value: x, key: i}
+                    })
+                    .where(x => index === x.key)
+                    .forEach(x => {
+                        x.value.active = true
+                        this.$set(this.images, x.key, x.value)
+                    })
+                this.$emit('clickImage', index, image);
             }
         }
     }
