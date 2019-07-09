@@ -22,7 +22,7 @@ Please inherit class ImageUploadable
       
 <script>
     import CircleImageList from './components/CircleImageList'
-    import  ImageUploadable from './models/Parents/ImageUploadable'
+    import  {ImageUploadable} from '@team-decorate/alcjs'
 
     export default {
         data() {
