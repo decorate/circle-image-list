@@ -7,7 +7,7 @@
                     v-for="(image, i) in images"
                     :class="[{'active': image.active}]">
 
-                    <img :src="image.path"/>
+                    <img onerror='this.src="/images/usericon.jpg"'  :src="image.path"/>
                 </li>
             </ul>
         </div>
